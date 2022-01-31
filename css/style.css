@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap");
 :root {
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
@@ -23,6 +23,9 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+a {
+  text-decoration: none;
 }
 .container {
   padding-left: 15px;
@@ -333,26 +336,61 @@ ul {
 .articles .container .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: white;
   -webkit-box-shadow: 0 0 10px I#ddd;
   -moz-box-shadow: 0 0 10px I#ddd;
   box-shadow: 0 2px 15px rgb(10 10 10 / 10%);
   border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
   overflow: hidden;
-  transition: transform var(--main-transition), box-shadow var(--main-transition);
+  transition: transform var(--main-transition),
+    box-shadow var(--main-transition);
 }
-.articles .container .box:hover {
+.articles .box:hover {
   transform: translateY(-15px) scale(1.02);
   box-shadow: 0 2px 15px rgb(10 10 10 / 25%);
 }
-.articles .container .box .image img {
+.articles .box .image img {
   width: 100%;
   max-width: 100%;
 }
-.articles .container .box .content {
-  padding: 15px;
+.articles .box .content {
+  border-bottom: 2px solid #e9e6e6;
+  padding: 20px;
 }
+.articles .box .content h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.articles .box .content p {
+  color: #777;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.articles .box .info {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.articles .box .info:hover {
+  transform: scale(1.02, 1.05);
+}
+.articles .box .info * {
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.articles .box:hover .info i {
+  animation: arrow 0.5s linear infinite;
+}
+/* .articles .box .info a {
+  text-decoration: none;
+  color: var(--main-color);
+} */
+
 /* animations */
 @keyframes header-a {
   50% {
@@ -388,12 +426,12 @@ ul {
 }
 @keyframes left-to-fill {
   50% {
-    left: 0;
+    left: 1px;
     width: 15px;
     height: 15px;
   }
   100% {
-    left: 0;
+    left: 1px;
     border-radius: 80px 0px 0px 80px;
     height: 100%;
     width: 50%;
@@ -401,14 +439,22 @@ ul {
 }
 @keyframes right-to-fill {
   50% {
-    right: 0;
+    right: 1px;
     width: 15px;
     height: 15px;
   }
   100% {
-    right: 0;
+    right: 1px;
     border-radius: 0px 80px 80px 0px;
     height: 100%;
     width: 50%;
+  }
+}
+@keyframes arrow {
+  50%{
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(10px);
   }
 }
