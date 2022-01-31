@@ -373,6 +373,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: var(--main-transition);
 }
 .articles .box .info:hover {
   transform: scale(1.02, 1.05);
